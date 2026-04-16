@@ -55,6 +55,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
 
     function clickedIgnoreButton() {
+      // Get rid of any current focus, in effect ignoring the pet
       document.querySelector('.treat-button').blur();
       document.querySelector('.play-button').blur();
       document.querySelector('.ignore-button').blur();
@@ -68,6 +69,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function checkWeightAndHappinessBeforeUpdating() {
       // Add conditional so if weight is lower than zero.
         if (pet_info.weight < 1){
+          // Suggest clicking the treat button since the pet is hungry by focusing that button
           document.querySelector('.treat-button').focus({ focusVisible : true});
           pet_info.weight = 1;
           window.prompt("I am starving!");
@@ -76,6 +78,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
           document.querySelector('.treat-button').blur();
         }
         if (pet_info.happiness < 1){
+          // Suggest clicking the play button since the pet is unhappy by focusing that button
           document.querySelector('.play-button').focus({ focusVisible : true});
           pet_info.happiness = 1;
           window.prompt("I hate you!");
